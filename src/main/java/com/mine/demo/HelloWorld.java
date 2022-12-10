@@ -10,5 +10,10 @@ public class HelloWorld {
 
         System.out.println("Hello, SpringBootWorld!");
         System.out.println("This is git test!");
+        sayOk();
+    }
+
+    public static void sayOk() {
+        System.out.println("Finally, I can solve this problem!");
     }
 }
