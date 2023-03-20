@@ -16,7 +16,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @SelfDefineLog("自定义日志")
+    @SelfDefineLog("accountId")
     @RequestMapping("user/{id}")
     public User findUser(@PathVariable("id") Integer id) {
         return userService.findUserById(id);
