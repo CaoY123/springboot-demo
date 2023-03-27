@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mine.annotation.dao.AccountLogBaseInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mine.annotation.entity.AccountLogBaseInfo">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ACCOUNT_ID" jdbcType="VARCHAR" property="accountId" />
+    <result column="MODULE_NAME" jdbcType="VARCHAR" property="moduleName" />
+    <result column="OPERATE_TYPE" jdbcType="VARCHAR" property="operateType" />
+    <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser" />
+    <result column="CREATE_USER_NAME" jdbcType="VARCHAR" property="createUserName" />
+    <result column="CREATE_DATE" jdbcType="OTHER" property="createDate" />
+    <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser" />
+    <result column="UPDATE_USER_NAME" jdbcType="VARCHAR" property="updateUserName" />
+    <result column="UPDATE_DATE" jdbcType="OTHER" property="updateDate" />
+    <result column="ASS_ID" jdbcType="VARCHAR" property="assId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, ACCOUNT_ID, MODULE_NAME, OPERATE_TYPE, CREATE_USER, CREATE_USER_NAME, CREATE_DATE,
+    UPDATE_USER, UPDATE_USER_NAME, UPDATE_DATE, REQUEST_PARAMS, RESPONSE_PARAMS, EXCEPTION_INFO, ASS_ID
+  </sql>
+  <select id="selectByExample" parameterType="com.mine.annotation.entity.AccountLogBaseInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from EAM.ACCOUNT_LOG_BASE_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from EAM.ACCOUNT_LOG_BASE_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from EAM.ACCOUNT_LOG_BASE_INFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mine.annotation.entity.AccountLogBaseInfoExample">
+    delete from EAM.ACCOUNT_LOG_BASE_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mine.annotation.entity.AccountLogBaseInfo">
+    insert into EAM.ACCOUNT_LOG_BASE_INFO (ID, ACCOUNT_ID, MODULE_NAME,
+      OPERATE_TYPE, CREATE_USER, CREATE_USER_NAME, CREATE_DATE,
+      UPDATE_USER, UPDATE_USER_NAME, UPDATE_DATE, ASS_ID,
+      REQUEST_PARAMS, RESPONSE_PARAMS, EXCEPTION_INFO
+      )
+    values (#{id,jdbcType=VARCHAR}, #{accountId,jdbcType=VARCHAR}, #{moduleName,jdbcType=VARCHAR},
+      #{operateType,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, #{createUserName,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
+      #{updateUser,jdbcType=VARCHAR}, #{updateUserName,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, #{assId,jdbcType=VARCHAR},
+      #{requestParams,jdbcType=CLOB}, #{responseParams,jdbcType=CLOB}, #{exceptionInfo,jdbcType=CLOB}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mine.annotation.entity.AccountLogBaseInfo">
+    insert into EAM.ACCOUNT_LOG_BASE_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="accountId != null">
+        ACCOUNT_ID,
+      </if>
+      <if test="moduleName != null">
+        MODULE_NAME,
+      </if>
+      <if test="operateType != null">
+        OPERATE_TYPE,
+      </if>
+      <if test="createUser != null">
+        CREATE_USER,
+      </if>
+      <if test="createUserName != null">
+        CREATE_USER_NAME,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER,
+      </if>
+      <if test="updateUserName != null">
+        UPDATE_USER_NAME,
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE,
+      </if>
+      <if test="assId != null">
+        ASS_ID,
+      </if>
+      <if test="requestParams != null">
+        REQUEST_PARAMS,
+      </if>
+      <if test="responseParams != null">
+        RESPONSE_PARAMS,
+      </if>
+      <if test="exceptionInfo != null">
+        EXCEPTION_INFO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleName != null">
+        #{moduleName,jdbcType=VARCHAR},
+      </if>
+      <if test="operateType != null">
+        #{operateType,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserName != null">
+        #{createUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=OTHER},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUserName != null">
+        #{updateUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=OTHER},
+      </if>
+      <if test="assId != null">
+        #{assId,jdbcType=VARCHAR},
+      </if>
+      <if test="requestParams != null">
+        #{requestParams,jdbcType=CLOB},
+      </if>
+      <if test="responseParams != null">
+        #{responseParams,jdbcType=CLOB},
+      </if>
+      <if test="exceptionInfo != null">
+        #{exceptionInfo,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mine.annotation.entity.AccountLogBaseInfoExample" resultType="java.lang.Long">
+    select count(*) from EAM.ACCOUNT_LOG_BASE_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update EAM.ACCOUNT_LOG_BASE_INFO
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountId != null">
+        ACCOUNT_ID = #{record.accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.moduleName != null">
+        MODULE_NAME = #{record.moduleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operateType != null">
+        OPERATE_TYPE = #{record.operateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUser != null">
+        CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUserName != null">
+        CREATE_USER_NAME = #{record.createUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        CREATE_DATE = #{record.createDate,jdbcType=OTHER},
+      </if>
+      <if test="record.updateUser != null">
+        UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateUserName != null">
+        UPDATE_USER_NAME = #{record.updateUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateDate != null">
+        UPDATE_DATE = #{record.updateDate,jdbcType=OTHER},
+      </if>
+      <if test="record.assId != null">
+        ASS_ID = #{record.assId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.requestParams != null">
+        REQUEST_PARAMS = #{record.requestParams,jdbcType=CLOB},
+      </if>
+      <if test="record.responseParams != null">
+        RESPONSE_PARAMS = #{record.responseParams,jdbcType=CLOB},
+      </if>
+      <if test="record.exceptionInfo != null">
+        EXCEPTION_INFO = #{record.exceptionInfo,jdbcType=CLOB},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update EAM.ACCOUNT_LOG_BASE_INFO
+    set ID = #{record.id,jdbcType=VARCHAR},
+      ACCOUNT_ID = #{record.accountId,jdbcType=VARCHAR},
+      MODULE_NAME = #{record.moduleName,jdbcType=VARCHAR},
+      OPERATE_TYPE = #{record.operateType,jdbcType=VARCHAR},
+      CREATE_USER = #{record.createUser,jdbcType=VARCHAR},
+      CREATE_USER_NAME = #{record.createUserName,jdbcType=VARCHAR},
+      CREATE_DATE = #{record.createDate,jdbcType=OTHER},
+      UPDATE_USER = #{record.updateUser,jdbcType=VARCHAR},
+      UPDATE_USER_NAME = #{record.updateUserName,jdbcType=VARCHAR},
+      UPDATE_DATE = #{record.updateDate,jdbcType=OTHER},
+      ASS_ID = #{record.assId,jdbcType=VARCHAR},
+      REQUEST_PARAMS = #{record.requestParams,jdbcType=CLOB},
+      RESPONSE_PARAMS = #{record.responseParams,jdbcType=CLOB},
+      EXCEPTION_INFO = #{record.exceptionInfo,jdbcType=CLOB}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mine.annotation.entity.AccountLogBaseInfo">
+    update EAM.ACCOUNT_LOG_BASE_INFO
+    <set>
+      <if test="accountId != null">
+        ACCOUNT_ID = #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="moduleName != null">
+        MODULE_NAME = #{moduleName,jdbcType=VARCHAR},
+      </if>
+      <if test="operateType != null">
+        OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null">
+        CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserName != null">
+        CREATE_USER = #{createUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=OTHER},
+      </if>
+      <if test="updateUser != null">
+        UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUserName != null">
+        UPDATE_USER_NAME = #{updateUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        UPDATE_DATE = #{updateDate,jdbcType=OTHER},
+      </if>
+      <if test="assId != null">
+        ASS_ID = #{assId,jdbcType=VARCHAR},
+      </if>
+      <if test="requestParams != null">
+        REQUEST_PARAMS = #{requestParams,jdbcType=CLOB},
+      </if>
+      <if test="responseParams != null">
+        RESPONSE_PARAMS = #{responseParams,jdbcType=CLOB},
+      </if>
+      <if test="exceptionInfo != null">
+        EXCEPTION_INFO = #{exceptionInfo,jdbcType=CLOB},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mine.annotation.entity.AccountLogBaseInfo">
+    update EAM.ACCOUNT_LOG_BASE_INFO
+    set ACCOUNT_ID = #{accountId,jdbcType=VARCHAR},
+      MODULE_NAME = #{moduleName,jdbcType=VARCHAR},
+      OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      CREATE_USER = #{createUser,jdbcType=VARCHAR},
+      CREATE_USER_NAME = #{createUserName,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=OTHER},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
+      UPDATE_USER_NAME = #{updateUserName,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=OTHER},
+      ASS_ID = #{assId,jdbcType=VARCHAR},
+      REQUEST_PARAMS = #{requestParams,jdbcType=CLOB},
+      RESPONSE_PARAMS = #{responseParams,jdbcType=CLOB},
+      EXCEPTION_INFO = #{exceptionInfo,jdbcType=CLOB}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
