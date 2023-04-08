@@ -1,6 +1,6 @@
-package com.mine.stream;
+package com.mine.java.stream;
 
-import com.mine.stream.entity.MyEntry;
+import com.mine.java.stream.entity.MyEntry;
 import org.junit.Test;
 
 import java.util.*;

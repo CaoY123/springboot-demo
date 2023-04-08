@@ -1,4 +1,4 @@
-package com.mine.stream.entity;
+package com.mine.java.stream.entity;
 
 import lombok.Builder;
 import lombok.Getter;

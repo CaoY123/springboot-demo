@@ -1,4 +1,4 @@
-package com.mine.exception;
+package com.mine.java.exception;
 
 import org.junit.Test;
 
