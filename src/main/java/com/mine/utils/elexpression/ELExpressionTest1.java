@@ -1,4 +1,4 @@
-package com.mine.utils;
+package com.mine.utils.elexpression;
 
 import org.junit.Test;
 import org.springframework.expression.Expression;
@@ -10,7 +10,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
  * @create 2023-04-21-6:26 PM
  * @description EL表达式测试 - Expression
  */
-public class ELExpressionTest {
+public class ELExpressionTest1 {
 
     @Test
     public void test1() {
