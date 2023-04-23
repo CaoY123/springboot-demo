@@ -17,7 +17,7 @@ import java.util.List;
 @SpringBootTest
 public class AccountLogBaseInfoMapperTest {
 
-    @Autowired
+    @Autowired(required = false) // 为了SpringBoot能正常启动，有时候将required设置位false，并不是真的接受这个条件
     private AccountLogBaseInfoMapper accountLogBaseInfoMapper;
 
     @Test
