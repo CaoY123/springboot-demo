@@ -1,8 +1,7 @@
 package com.mine.spring.exception.controller;
 
-import com.mine.spring.exception.domain.RetResult;
+import com.mine.domain.RetResult;
 import com.mine.spring.exception.enums.RetCodeEnum;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

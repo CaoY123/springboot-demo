@@ -1,4 +1,4 @@
-package com.mine.spring.exception.domain;
+package com.mine.domain;
 
 import com.mine.spring.exception.enums.RetCodeEnum;
 
