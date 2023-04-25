@@ -1,5 +1,7 @@
 package com.mine.spring.reflect.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +18,19 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel("反射出参")
 public class ReflectOutRetParam {
+
+    @ApiModelProperty("名字")
     private String name;
+
+    @ApiModelProperty("编号")
     private Integer number;
+
+    @ApiModelProperty("存款")
     private BigDecimal deposit;
+
+    @ApiModelProperty("描述")
     private String desc;
 
     public ReflectOutRetParam(Map<String, Object> map) {
