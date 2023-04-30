@@ -66,7 +66,7 @@ public class ArrayListTest1 {
         list1.addAll(Arrays.asList(1, 2, 3, 4, 5, 6));
         System.out.println(list1);
         // 看看其索引传负值的反应，能通过最初的校验，其本质抛出的异常是数组下标传负值时所报的异常
-        list1.set(-1, 10);
+//        list1.set(-1, 10);
         System.out.println(list1);
     }
 
