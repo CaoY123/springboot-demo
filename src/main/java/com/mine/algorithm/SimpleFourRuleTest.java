@@ -1,4 +1,4 @@
-package com.mine;
+package com.mine.algorithm;
 
 import io.swagger.models.auth.In;
 
