@@ -28,5 +28,6 @@ public class SortTwoOrderedArrayTest {
                 res = Arrays.copyOf(array2, array2.length);
             }
         }
+        return null;
     }
 }
