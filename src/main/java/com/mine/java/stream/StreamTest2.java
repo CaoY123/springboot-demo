@@ -16,6 +16,7 @@ import java.util.stream.Stream;
  * filter产生的流中包含满足谓词条件的元素；（过滤）
  * map产生的流式将传入其中的方法应用于流中所有元素而产生的结果；（映射）
  * flatmap 类似于 map，但是它在map的基础上还会将其中每个流产生的结果再连接到一起而获得一个新的流
+ * 比较来说，map 把流中的每个元素都按照指定规则映射为另一个元素；而flatMap则会把流中的每一个元素都映射为一个流，然后把这些流合并为一个流
  */
 public class StreamTest2 {
 

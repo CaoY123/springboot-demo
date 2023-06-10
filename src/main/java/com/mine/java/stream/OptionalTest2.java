@@ -14,7 +14,8 @@ import java.util.stream.Stream;
  * @date 2023-06-10 10:15
  * @description Optional类的其他操作
  * 展示了flatMap用于组装Optional值相关的流程，但是对于flatMap的理解自认为还没有到位；
- *
+ * Optional的 map 和 flatMap 都是对Optional包装的对象进行映射操作，都是往其中传入相应的方法，但是与map不同的是，
+ * flatMap期望传入一个返回值是Optional类型的方法
  */
 public class OptionalTest2 {
 
