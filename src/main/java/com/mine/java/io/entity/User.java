@@ -2,15 +2,16 @@ package com.mine.java.io.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  * @author CaoY
  * @date 2023-06-10 10:44
- * @description 用于辅助学习 Stream 的用户类
+ * @description 用于辅助学习 IO流 的用户类
  */
 @Data
-public class User {
+public class User implements Serializable {
     private Integer id;
     private String name;
     private String gender;
