@@ -1,6 +1,5 @@
 package com.mine.java.io;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import lombok.Data;
 import org.junit.Test;
 
@@ -14,6 +13,10 @@ import java.time.LocalDate;
  * 使用 ObjectOutputStream 和 ByteArrayOutputStream 将原对象序列化，
  * 再用 ObjectInputStream 和 ByteArrayInputStream 反序列化已序列化的对象，
  * 由于反序列化会生成一个新的对象，所以正好实现了深拷贝的功能。而且还不需要知道要拷贝的类的结构。
+ *
+ * ByteArrayOutputStream：其继承自OutputStream，它的作用是在内存中创建一个可自动增长的字节数组缓冲区，并
+ * 提供了一系列方法来向缓冲区写入数据。注意：它主要提供了一种方便的方式，可以在内存中操作字节数据，而无需直接
+ * 与物理设备进行交互。那么，类似地，ByteArrayInputStream 提供了一种从内存中的缓冲区读取数据的方式。
  */
 public class IOTest14 {
 
