@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<font>
+    <!--这是一个简单的xml文件，只包含文档头和正文，而没有文档类型定义-->
+    <name>
+        Helvetica
+    </name>
+    <size unit="pt">36</size>
+</font>
