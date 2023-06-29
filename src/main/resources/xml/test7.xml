@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<catalog xmlns:books="http://www.example.com/books">
+    <books:book>
+        <books:title>Harry Potter and the Philosopher's Stone</books:title>
+        <books:author>J.K. Rowling</books:author>
+    </books:book>
+    <books:book>
+        <books:title>The Great Gatsby</books:title>
+        <books:author>F. Scott Fitzgerald</books:author>
+    </books:book>
+</catalog>
+<!--使用命名空间的XML文档，其URI为：http://www.example.com/books，
+该命名空间在<catalog>元素上定义，并通过前缀“books”与所有后续的子元素和属性关联起来。-->
