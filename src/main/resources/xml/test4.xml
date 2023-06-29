@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE font PUBLIC "-//W3C//DTD XMLSample//EN" "https://example.com/xmlsample.dtd">
+<font>
+    <name>
+        Helvetica
+    </name>
+    <size unit="pt">36</size>
+    <!--<!DOCTYPE> 声明中的 PUBLIC 关键字后面跟着一个标识符，然后是 DTD 的 URL。
+    标识符 "-//W3C//DTD XMLSample//EN" 是为了示例目的而提供的一个标识符，可以根据需要自定义它。
+    "https://example.com/xmlsample.dtd" 是示例 URL，可应根据需要将其替换为指向实际 DTD 文件的有效 URL。-->
+    <!--注：上述的URL并不真实存在，会有报错，但是并不影响代码运行-->
+</font>
+

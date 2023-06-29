@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <xsd:element name="font" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="size" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:element>
+    <font>
+        <!--XML Schema 表示 XML 文档规则-->
+        <name>
+            Helvetica
+        </name>
+        <size unit="pt">36</size>
+    </font>
+</xml>

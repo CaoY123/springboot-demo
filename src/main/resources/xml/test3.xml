@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE font [
+        <!ELEMENT font (name, size)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT size (#PCDATA)>
+        <!ATTLIST size unit CDATA #IMPLIED>
+        ]>
+<font>
+    <!--一种DTD的写法，DTD（Document Type Definition）：文档类型定义-->
+    <!--<!ELEMENT font (name, size)>：定义 <font> 元素应包含名为 name 和 size 的子元素。
+    <!ELEMENT name (#PCDATA)>：定义 <name> 元素只能包含文本数据（Parsed Character Data）。
+    <!ELEMENT size (#PCDATA)>：定义 <size> 元素只能包含文本数据。
+    <!ATTLIST size unit CDATA #IMPLIED>：定义在 <size> 元素上可选的 unit 属性，使用 CDATA 类型。-->
+    <name>
+        Helvetica
+    </name>
+    <size unit="pt">36</size>
+</font>
