@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE staff PUBLIC "-//W3C//DTD SVG 20000802//EN" "http://www.w3.org/TR/2000/CR-SVG-20000802/DTD/svg-20000802.dtd">
+<staff>
+  <employee>
+    <name>Carl Cracker</name>
+    <salary>75000.0</salary>
+    <hiredate day="15" month="12" year="1987"/>
+  </employee>
+  <employee>
+    <name>Harry Hacker</name>
+    <salary>50000.0</salary>
+    <hiredate day="1" month="10" year="1989"/>
+  </employee>
+  <employee>
+    <name>Tony Tester</name>
+    <salary>40000.0</salary>
+    <hiredate day="15" month="3" year="1990"/>
+  </employee>
+</staff>
